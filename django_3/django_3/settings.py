@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'travail.apps.TravailConfig'
 ]
 
 MIDDLEWARE = [

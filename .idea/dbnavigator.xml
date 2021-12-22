@@ -23,7 +23,7 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="false" />
+    <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="33b02383-6a0f-4ff1-bf4e-81519df1e6bf">
         <schema name="main" object-types="table, view, constraint, index, column, dataset trigger" />
@@ -44,7 +44,11 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="33b02383-6a0f-4ff1-bf4e-81519df1e6bf" dataset="main.auth_user_user_permissions" active-filter-id="" />
+    <filter-actions connection-id="33b02383-6a0f-4ff1-bf4e-81519df1e6bf" dataset="main.fscohort_student" active-filter-id="4c3bca24-00f3-4a40-a865-2427e3db4e8a">
+      <filter id="4c3bca24-00f3-4a40-a865-2427e3db4e8a" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
     <filter-actions connection-id="33b02383-6a0f-4ff1-bf4e-81519df1e6bf" dataset="main.sqlite_sequence" active-filter-id="" />
+    <filter-actions connection-id="33b02383-6a0f-4ff1-bf4e-81519df1e6bf" dataset="main.django_session" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -90,7 +94,7 @@
           <port value="" />
           <database value="" />
           <files>
-            <file path="$PROJECT_DIR$/django_1/db.sqlite3" schema="main" />
+            <file path="$PROJECT_DIR$/django_2/db.sqlite3" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
