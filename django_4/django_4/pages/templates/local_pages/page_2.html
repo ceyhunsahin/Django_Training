@@ -1,0 +1,28 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {%block title%} Title section in block {% endblock title%}</title>
+</head>
+<body>
+    
+    {% for name in names %}
+    <h1> Hello! {{ name }}</h1>
+    <h3> {{ name | upper}}</h3>
+{% empty %}
+    <h2> No elements found in the list</h2>
+{% endfor %}
+  
+    {% if is_expired %}
+        <h2>
+            is_expired
+        </h2>
+    {% else %}
+        <h2>Is not expired</h2>
+    {% endif %}
+
+</body>
+</html>
