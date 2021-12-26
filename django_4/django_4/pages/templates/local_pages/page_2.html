@@ -23,6 +23,13 @@
     {% else %}
         <h2>Is not expired</h2>
     {% endif %}
+    <form action="/home/send_to_this_url/" method="get">
+        <label for="id_firstname">Firstname:</label>
+        <input id="id_firstname" type="text" name="firstname">
+        <label for="id_lastname">Lastname:</label>
+        <input id="id_lastname" type="text" name="lastname">
+        <input type="submit" value="OK">
+   </form>
 
 </body>
 </html>
