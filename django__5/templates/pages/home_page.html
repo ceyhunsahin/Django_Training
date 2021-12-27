@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    <h2> Props drilling {{ title }}</h2>
+
+    <h2> {{ dict1.django }} </h2>
+    {% for i in my_list  %} 
+        {% if i == 2 %}
+             <h2> ceyhun</h2>
+        # {% else %}
+            <ul>  volkan </ul>  
+
+        {% endif%}
+
+    {% endfor %}
+
+    {% for i in my_list2  %} 
+
+    {% empty %}
+    <h2> {% lorem 1 p %}</h2>
+    {% endfor %}
+
+    <h2> {% lorem 3 p %}</h2>
+    {{ my_list| unordered_list }}
+    </div>
+</body>
+</html>
