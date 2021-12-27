@@ -1,0 +1,14 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+ {% for i in students %}
+     <ul>
+        <li>{{ i }} -----> {{ i.number }}</li>
+     </ul>
+
+    {% endfor %}
+{% endblock content %}
