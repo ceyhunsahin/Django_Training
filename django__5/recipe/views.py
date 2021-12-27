@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from . import models
+from .forms import StudentForm
 
 
 # def home_view(request) :
@@ -13,11 +14,14 @@ from . import models
 #     return HttpResponse("hello")
 
 def home_view(request) :
+    form = StudentForm()
     context = {
         'title':'zehra',
         'dict1' : {'django' : 'best framework'},
         'my_list' : [1,7,3,4,5,],
-        'my_list2' : []
+        'my_list2' : [],
+        'form' : form
+
         
     }
 

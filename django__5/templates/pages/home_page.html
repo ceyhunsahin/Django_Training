@@ -12,6 +12,11 @@
         <input type="text" name = 'q' placeholder="title">
         <input type="submit" value = 'search'>
     </form>
+
+    <form action="." method="get">
+        {{ form }}
+    </form>
+
     <h2> Props drilling {{ title }}</h2>
 
     <h2> {{ dict1.django }} </h2>
