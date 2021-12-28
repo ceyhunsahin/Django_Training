@@ -7,7 +7,10 @@
 {% block content %}
  {% for i in students %}
      <ul>
-        <li>{{ i }} -----> {{ i.number }}</li>
+{#        <li>{{ i }} -----> {{ i.number }}</li>#}
+         <a href = "{% url 'detail' i.id %}">
+            <li>{{ i }} </li>
+         </a>
      </ul>
 
     {% endfor %}
