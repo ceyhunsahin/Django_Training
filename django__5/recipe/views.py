@@ -35,6 +35,19 @@ def student_list(request):
     }
     return render(request, 'pages/student_list.html', context)
 
+def student_add(request):
+    form = StudentForm()
+    print(request.POST)
+    if request.method == 'post':
+        form = StudentForm(request.POST)
+    context = {
+        'form' : form
+
+    }
+    return render(request,'pages/student_add.html', context)
+
+
+
 
 def about_page(request) :
     return HttpResponse('<h2> About_page has shown <h2>')

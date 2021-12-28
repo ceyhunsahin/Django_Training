@@ -1,0 +1,17 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}
+   Add Student
+
+{% endblock title %}
+
+
+{% block content %}
+
+    <h2>Add Student</h2>
+    <form action="", method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit", value="Add">
+    </form>
+{% endblock content %}
