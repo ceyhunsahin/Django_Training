@@ -33,6 +33,7 @@ def student_list(request):
         'students' : students,
         'counts' : students.count()
     }
+
     return render(request, 'pages/student_list.html', context)
 
 def student_add(request):
