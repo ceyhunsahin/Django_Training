@@ -30,7 +30,8 @@ def home_view(request) :
 def student_list(request):
     students = Student.objects.all()
     context = {
-        'students' : students
+        'students' : students,
+        'counts' : students.count()
     }
     return render(request, 'pages/student_list.html', context)
 
@@ -65,6 +66,19 @@ def student_delete(request, id):
     return render(request, 'pages/student_delete.html')
 
 
+def student_update(request, id) :
+    obj = get_object_or_404(Student, id = id)
+    form = StudentForm(instance = obj)
+    if request.method == 'POST' :
+        form = StudentForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', id)
+    context = {
+        "student" : obj,
+        "form" : form
+    }
+    return render(request, "pages/student_add.html", context)
 
 
 def about_page(request) :

@@ -6,6 +6,6 @@
         <h2> Are You Sure</h2>
         {% csrf_token %}
         <input type="submit", value="Yes">
-    <a href = '{% url 'list' %}'> No </a>
     </form>
+    <button type="submit" name="add" onclick="location.href = '{% url 'list' %}'"> No </button>
 {% endblock content %}
