@@ -1,0 +1,9 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+   <h4>{{ student.first_name }} {{ student.last_name }}  updated</h4>
+
+
+    <a href="{% url 'list' %}"><button>Return List</button></a>
+{% endblock content %}

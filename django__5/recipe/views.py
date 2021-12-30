@@ -43,7 +43,7 @@ def student_add(request):
         form = StudentForm(request.POST)
         if form.is_valid() :
             form.save()
-            return redirect('list')
+            return redirect('add')
 
     context = {
         'form' : form
@@ -74,14 +74,18 @@ def student_update(request, id) :
         form = StudentForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
-            return redirect('detail', id)
+            return redirect('list')
     context = {
         "student" : obj,
         "form" : form
     }
-    return render(request, "pages/student_add.html", context)
+    return render(request, "pages/student_update.html", context)
 
 
-def about_page(request) :
-    return HttpResponse('<h2> About_page has shown <h2>')
+def student_updated(request, id):
+    student = Student.objects.get(id = id)
+    context = {
+        'student': student,
+    }
+    return render(request, 'pages/student_updated.html', context)
 # Create your views here.

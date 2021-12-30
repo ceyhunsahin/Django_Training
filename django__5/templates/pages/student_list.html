@@ -16,7 +16,7 @@
      </ul>
 
     {% endfor %}
-    <button type="submit" name="add"
-            onclick="location.href = '{% url 'add' %}'">Add new person </button>
+{#    <a href="{% url 'update' %}"><button>Update</button></a>#}
+{#    <a href="{% url 'home' %}"><button>Home</button></a>#}
     <p> There are <span style="color: blue; font-size:23px ">{{ counts }}</span> person</p>
 {% endblock content %}
