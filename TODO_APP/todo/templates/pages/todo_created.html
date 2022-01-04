@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Todo Created
+{% endblock title %}
+
+{% block content %}
+<div>
+    <h3> Create Todo List </h3>
+    <form action="" method="POST">
+         {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add">
+    </form>
+<a href="{% url 'list' %}"> <button> Dismiss </button> </a>
+</div>
+
+
+
+
+{% endblock content %}

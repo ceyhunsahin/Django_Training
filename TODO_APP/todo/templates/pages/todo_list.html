@@ -9,9 +9,18 @@ Todo_list
     <h3> Todo List</h3>
      <ul>
          {% for i in todos %}
-             <li>  {{ i }} </li>
+             <a href=" {% url 'update' i.id %}">
+             {% if i.completed %}
+
+                 <li><del>{{ i }}</del></li>
+             {% else %}
+                 <li>  {{ i }} </li>
+                 </a>
+             {% endif %}
          {% endfor %}
      </ul>
+<a href="{% url 'create' %}"> <button> Create </button> </a>
+
 </div>
 
 

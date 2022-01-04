@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6ca4906-37d7-4a6d-a06a-30a5d12c8909" name="Changes" comment="todo_2">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templt/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/migrations/0002_auto_20211230_2111.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/migrations/0003_rename_todo_todo_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/migrations/0004_auto_20211230_2206.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/migrations/0005_auto_20211231_1439.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/templates/pages/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/templates/pages/todo_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/urls.py" afterDir="false" />
+    <list default="true" id="a6ca4906-37d7-4a6d-a06a-30a5d12c8909" name="Changes" comment="todo_3">
+      <change afterPath="$PROJECT_DIR$/todo/templates/pages/todo_created.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo/templates/pages/todo_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo/templates/pages/todo_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO_APP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TODO_APP/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO_APP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TODO_APP/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo/templates/pages/todo_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo/templates/pages/todo_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django__5/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../django__5/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +175,8 @@
       <workItem from="1640889817158" duration="571000" />
       <workItem from="1640898165355" duration="3175000" />
       <workItem from="1640901738317" duration="439000" />
-      <workItem from="1640960859735" duration="1587000" />
+      <workItem from="1640960859735" duration="6893000" />
+      <workItem from="1640989186318" duration="5273000" />
     </task>
     <task id="LOCAL-00003" summary="todo_2">
       <created>1640892652662</created>
@@ -200,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640896472771</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="todo_3">
+      <created>1640962551241</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640962551241</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +249,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="todo_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo_2" />
+    <MESSAGE value="todo_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo_3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
