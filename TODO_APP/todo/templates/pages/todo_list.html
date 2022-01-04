@@ -12,7 +12,7 @@ Todo_list
              <a href=" {% url 'update' i.id %}">
              {% if i.completed %}
 
-                 <li><del>{{ i }}</del></li>
+                 <li><i>{{ i }}</i></li>
              {% else %}
                  <li>  {{ i }} </li>
                  </a>
