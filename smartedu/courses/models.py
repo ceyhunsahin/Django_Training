@@ -1,5 +1,5 @@
 from django.db import models
-
+from teachers.models import Teacher
 
 
 
@@ -27,6 +27,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to='courses/%Y/%m/%d/', default="courses/dummy_image_default.png")
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
+    teacher = models.ForeignKey(Teacher, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

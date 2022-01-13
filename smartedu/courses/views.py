@@ -17,21 +17,29 @@ def course_list(request):
     return render(request, 'courses.html', context)
 
 
-def course_detail(request, category_slug,  course_id):
-    course = Course.objects.all().filter(category__slug=category_slug, id=course_id)
-    print(course)
+def course_detail(request, category_slug, course_id):
+    # current_user = request.user
+    course = Course.objects.get(category__slug=category_slug, id = course_id)
+    print(type(course))
     categories = Category.objects.all()
     tags = Tag.objects.all()
+    # if current_user.is_authenticated:
+    #     enrolled_courses = current_user.courses_joined.all()
+    #
+    # else:
+    #     enrolled_courses = courses
+
+    #enrolled_courses = current_user.courses_joined.all()
+
     context = {
         'course': course,
+        # 'enrolled_courses': enrolled_courses,
         'categories': categories,
-        'tags':tags
+        'tags': tags
     }
+
     return render(request, 'course.html', context)
 
-
-
-# Create your views here.
 def category_list(request, category_slug):
     courses = Course.objects.all().filter(category__slug=category_slug)
 
