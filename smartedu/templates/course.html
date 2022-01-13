@@ -5,7 +5,7 @@
 
 <div class="all-title-box">
 	<div class="container text-center">
-		<h1><span><{{course.name}}</span></h1>
+		<h1><span>{{ course.name }}</span></h1>
 	</div>
 </div>
 
@@ -51,24 +51,24 @@
 					</div>
 				</div>
 
-				<div class="blog-author">
-					<div class="author-bio">
-						<h3 class="author_name"><a
-								href="{% url 'teacher_detail' course.teacher.pk %}">{{course.teacher.name}}</a></h3>
-						<h5>{{course.teacher.title}}</h5>
-						<p class="author_det">
-							{{course.teacher.description}}
-						</p>
-					</div>
-					<div class="author-desc">
-						<img src="{{course.teacher.image.url}}" alt="about author">
-						<ul class="author-social">
-							<li><a href="{{course.teacher.facebook}}"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="{{course.teacher.twitter}}"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="{{course.teacher.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
+{#				<div class="blog-author">#}
+{#					<div class="author-bio">#}
+{#						<h3 class="author_name"><a#}
+{#								href="{% url 'teacher_detail' course.teacher.pk %}">{{course.teacher.name}}</a></h3>#}
+{#						<h5>{{course.teacher.title}}</h5>#}
+{#						<p class="author_det">#}
+{#							{{course.teacher.description}}#}
+{#						</p>#}
+{#					</div>#}
+{#					<div class="author-desc">#}
+{#						<img src="{{course.teacher.image.url}}" alt="about author">#}
+{#						<ul class="author-social">#}
+{#							<li><a href="{{course.teacher.facebook}}"><i class="fa fa-facebook"></i></a></li>#}
+{#							<li><a href="{{course.teacher.twitter}}"><i class="fa fa-twitter"></i></a></li>#}
+{#							<li><a href="{{course.teacher.linkedin}}"><i class="fa fa-linkedin"></i></a></li>#}
+{#						</ul>#}
+{#					</div>#}
+{#				</div>#}
 
 
 			</div><!-- end col -->
@@ -121,17 +121,17 @@
 				<p>You will enroll the course below:</p>
 				<h1>{{course.name}}</h1>
 			</div>
-			<div class="modal-footer">
-				<form action="{% url 'enroll_the_course' %}" method="POST">
-					{% csrf_token %}
-					<input type="hidden" name="user_id" value="{{user.id}}">
-					<input type="hidden" name="course_id" value="{{course.id}}">
-					<input type="submit" value="I AM SURE" class="btn btn-success">
-				</form>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">
-					CANCEL
-				</button>
-			</div>
+{#			<div class="modal-footer">#}
+{#				<form action="{% url 'enroll_the_course' %}" method="POST">#}
+{#					{% csrf_token %}#}
+{#					<input type="hidden" name="user_id" value="{{user.id}}">#}
+{#					<input type="hidden" name="course_id" value="{{course.id}}">#}
+{#					<input type="submit" value="I AM SURE" class="btn btn-success">#}
+{#				</form>#}
+{#				<button type="button" class="btn btn-secondary" data-dismiss="modal">#}
+{#					CANCEL#}
+{#				</button>#}
+{#			</div>#}
 		</div>
 	</div>
 </div>
@@ -151,17 +151,17 @@
 				<p>You will release the course below:</p>
 				<h1>{{course.name}}</h1>
 			</div>
-			<div class="modal-footer">
-				<form action="{% url 'release_the_course' %}" method="POST">
-					{% csrf_token %}
-					<input type="hidden" name="user_id" value="{{user.id}}">
-					<input type="hidden" name="course_id" value="{{course.id}}">
-					<input type="submit" value="I AM SURE" class="btn btn-danger">
-				</form>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">
-					CANCEL
-				</button>
-			</div>
+{#			<div class="modal-footer">#}
+{#				<form action="{% url 'release_the_course' %}" method="POST">#}
+{#					{% csrf_token %}#}
+{#					<input type="hidden" name="user_id" value="{{user.id}}">#}
+{#					<input type="hidden" name="course_id" value="{{course.id}}">#}
+{#					<input type="submit" value="I AM SURE" class="btn btn-danger">#}
+{#				</form>#}
+{#				<button type="button" class="btn btn-secondary" data-dismiss="modal">#}
+{#					CANCEL#}
+{#				</button>#}
+{#			</div>#}
 		</div>
 	</div>
 </div>
