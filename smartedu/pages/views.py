@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from courses.models import Course
+from pages.forms import ContactForm
+from django.views.generic.edit import FormView
 
 # def index(request) :
 #     return render(request, 'index.html' )
@@ -21,4 +23,8 @@ class IndexView (TemplateView):
         # context['total_students'] = User.objects.count()
         return context
 
-# Create your views here.
+class ContactFormView(FormView):
+    template_name = 'contact.html'
+    form_class = ContactForm
+    success_url = '/thanks/'
+
