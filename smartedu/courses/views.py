@@ -1,7 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Course, Category, Tag
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 def course_list(request, category_slug = None, tag_slug = None):
     category_page = None
@@ -26,6 +28,11 @@ def course_list(request, category_slug = None, tag_slug = None):
         }
     return render(request, 'courses.html', context)
 
+
+
+
+
+@login_required
 def course_detail(request, category_slug, course_id):
     # current_user = request.user
     course = Course.objects.get(category__slug=category_slug, id = course_id)
@@ -48,6 +55,8 @@ def course_detail(request, category_slug, course_id):
     }
 
     return render(request, 'course.html', context)
+    # print(HttpResponseRedirect(reverse('course_detail', args=(category_slug, course_id))))
+    # return HttpResponseRedirect(reverse('course_detail', args=(category_slug, course_id)))
 
 def search(request) :
     # courses = Course.objects.all().filter (name__contains = request.GET['search'])

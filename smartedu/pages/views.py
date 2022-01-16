@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+# from django.shortcuts import render
+# from django.http import HttpResponse
 from django.views.generic import TemplateView
 from courses.models import Course
 from pages.forms import ContactForm
 from django.views.generic.edit import FormView
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
 # def index(request) :
 #     return render(request, 'index.html' )
@@ -23,8 +25,14 @@ class IndexView (TemplateView):
         # context['total_students'] = User.objects.count()
         return context
 
-class ContactFormView(FormView):
+class ContactFormView(SuccessMessageMixin,FormView):
     template_name = 'contact.html'
     form_class = ContactForm
-    success_url = '/thanks/'
+    success_url = reverse_lazy('contact')
+    success_message = "We received your request"
+
+    def form_valid(self, form):
+        form.save()
+        form.send_email ()
+        return super().form_valid(form)
 

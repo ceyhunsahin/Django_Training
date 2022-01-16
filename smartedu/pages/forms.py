@@ -1,8 +1,10 @@
 
 from pages.models import ContactFormMod
 from django import forms
+from django.core.exceptions import ValidationError
 
 class ContactForm(forms.ModelForm):
+
     first_name = forms.CharField(widget=forms.TextInput(attrs= {
         'class' : 'form-control', 'placeholder' : 'FirstName'
     }))
@@ -18,8 +20,12 @@ class ContactForm(forms.ModelForm):
     message = forms.CharField(widget=forms.Textarea(attrs= {
         'class' : 'form-control', 'placeholder' : 'Message'
     }))
-
-
     class Meta:
         model = ContactFormMod
         fields = ['first_name', 'last_name', 'email', 'phone', 'message']
+
+    def send_email(self):
+            # send email using the self.cleaned_data dictionary
+        pass
+
+

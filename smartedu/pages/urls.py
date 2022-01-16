@@ -6,7 +6,7 @@ urlpatterns = [
     # path('about/', views.about, name = 'about'),
     path('', IndexView.as_view(), name = 'index'),
     path('about/', AboutView.as_view(), name = 'about'),
-    path('contact/',ContactFormView.as_view(), name = 'contact'),
+    path('contact/', ContactFormView.as_view(), name = 'contact'),
     # path('courses/', views.courses, name = 'courses'),
 
 
