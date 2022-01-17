@@ -3,14 +3,13 @@ from .models import Course, Category, Tag
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.db.models import Q
-from django.contrib.auth.decorators import login_required
 
 def course_list(request, category_slug = None, tag_slug = None):
     category_page = None
     tag_page = None
     categories = Category.objects.all()
     tags = Tag.objects.all()
-
+    current_user = request.user
     if category_slug != None:
         category_page = get_object_or_404(Category, slug = category_slug)
         courses = Course.objects.filter(available=True, category= category_page)
@@ -19,7 +18,13 @@ def course_list(request, category_slug = None, tag_slug = None):
         courses = Course.objects.filter(available=True, tags= tag_page)
 
     else:
-        courses = Course.objects.all ().order_by ('-date')
+        if current_user.is_authenticated :
+            enrolled_course = current_user.courses_joined.all()
+            courses = Course.objects.all ().order_by ('-date')
+            for course in enrolled_course :
+                courses = courses.exclude(id = course.id)
+                print('courses', courses)
+
 
     context = {
         'courses' : courses,
@@ -32,25 +37,24 @@ def course_list(request, category_slug = None, tag_slug = None):
 
 
 
-@login_required
+
 def course_detail(request, category_slug, course_id):
-    # current_user = request.user
+    current_user = request.user
+    print(current_user)
     course = Course.objects.get(category__slug=category_slug, id = course_id)
-    print(type(course))
+    courses = ''
     categories = Category.objects.all()
     tags = Tag.objects.all()
-    # if current_user.is_authenticated:
-    #     enrolled_courses = current_user.courses_joined.all()
-    #
-    # else:
-    #     enrolled_courses = courses
+    if current_user.is_authenticated:
+        enrolled_courses = current_user.courses_joined.all()
 
-    #enrolled_courses = current_user.courses_joined.all()
+    else:
+        enrolled_courses = courses
 
     context = {
         'course': course,
-        # 'enrolled_courses': enrolled_courses,
         'categories': categories,
+        'enrolled_courses' : enrolled_courses,
         'tags': tags
     }
 
@@ -71,6 +75,9 @@ def search(request) :
         'tags': tags
     }
     return render(request, 'courses.html', context)
+
+
+
 
 # def course_list(request):
 #     # courses = Course.objects.get (category__slug=slug)

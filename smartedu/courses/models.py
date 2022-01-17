@@ -1,5 +1,6 @@
 from django.db import models
 from teachers.models import Teacher
+from django.contrib.auth.models import User
 
 
 
@@ -28,7 +29,7 @@ class Course(models.Model):
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
     teacher = models.ForeignKey(Teacher, null=True, on_delete=models.CASCADE)
-
+    students = models.ManyToManyField(User, blank = True, related_name = 'courses_joined')
     def __str__(self):
         return self.name
 
