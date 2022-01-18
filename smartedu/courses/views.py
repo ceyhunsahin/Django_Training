@@ -24,6 +24,8 @@ def course_list(request, category_slug = None, tag_slug = None):
             for course in enrolled_course :
                 courses = courses.exclude(id = course.id)
                 print('courses', courses)
+        else:
+            courses = Course.objects.all ().order_by ('-date')
 
 
     context = {
@@ -42,7 +44,7 @@ def course_detail(request, category_slug, course_id):
     current_user = request.user
     print(current_user)
     course = Course.objects.get(category__slug=category_slug, id = course_id)
-    courses = ''
+    courses = Course.objects.all ().order_by ('-date')
     categories = Category.objects.all()
     tags = Tag.objects.all()
     if current_user.is_authenticated:
@@ -53,9 +55,10 @@ def course_detail(request, category_slug, course_id):
 
     context = {
         'course': course,
-        'categories': categories,
         'enrolled_courses' : enrolled_courses,
+        'categories': categories,
         'tags': tags
+
     }
 
     return render(request, 'course.html', context)
@@ -75,6 +78,7 @@ def search(request) :
         'tags': tags
     }
     return render(request, 'courses.html', context)
+
 
 
 
