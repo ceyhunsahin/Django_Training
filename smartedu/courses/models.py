@@ -28,7 +28,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to='courses/%Y/%m/%d/', default="courses/dummy_image_default.png")
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
-    teacher = models.ForeignKey(Teacher, null=True, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, null=True, on_delete=models.CASCADE, related_name = 'courses_ceyhun')
     students = models.ManyToManyField(User, blank = True, related_name = 'courses_joined')
     def __str__(self):
         return self.name

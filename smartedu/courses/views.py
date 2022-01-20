@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Course, Category, Tag
+from .models import Course, Category, Tag,Teacher
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.db.models import Q
@@ -10,6 +10,9 @@ def course_list(request, category_slug = None, tag_slug = None):
     categories = Category.objects.all()
     tags = Tag.objects.all()
     current_user = request.user
+    ceyhun = Course.objects.all()
+    ceyhun = ceyhun.te
+    print ('ceyhun', ceyhun)
     if category_slug != None:
         category_page = get_object_or_404(Category, slug = category_slug)
         courses = Course.objects.filter(available=True, category= category_page)
@@ -21,6 +24,7 @@ def course_list(request, category_slug = None, tag_slug = None):
         if current_user.is_authenticated :
             enrolled_course = current_user.courses_joined.all()
             courses = Course.objects.all ().order_by ('-date')
+
             for course in enrolled_course :
                 courses = courses.exclude(id = course.id)
                 print('courses', courses)
