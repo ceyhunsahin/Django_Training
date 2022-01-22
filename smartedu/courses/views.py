@@ -10,9 +10,7 @@ def course_list(request, category_slug = None, tag_slug = None):
     categories = Category.objects.all()
     tags = Tag.objects.all()
     current_user = request.user
-    ceyhun = Course.objects.all()
-    ceyhun = ceyhun.te
-    print ('ceyhun', ceyhun)
+
     if category_slug != None:
         category_page = get_object_or_404(Category, slug = category_slug)
         courses = Course.objects.filter(available=True, category= category_page)
